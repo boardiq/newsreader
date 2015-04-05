@@ -1,0 +1,14 @@
+times:
+  business: http://www.thetimes.co.uk/tto/business/rss
+
+telegraph:
+  business: http://www.telegraph.co.uk/finance/rss
+
+independent:
+  business: http://rss.feedsportal.com/c/266/f/3510/index.rss
+
+ft:
+  business: http://www.ft.com/rss/world/uk/business-economy
+
+guardian:
+  business: http://www.theguardian.com/business/companies/rss
