@@ -1,6 +1,7 @@
 require 'yaml'
 require 'net/http'
 require 'rss'
+require 'sanitize'
 require 'active_support'
 require 'active_support/core_ext'
 
@@ -9,7 +10,6 @@ $:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
 require "newsreader/version"
 require "newsreader/feed"
 require "newsreader/channel"
-require "newsreader/server"
 
 module Newsreader
   

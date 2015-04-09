@@ -3,7 +3,8 @@ require 'sinatra/base'
 module Newsreader
   class Server < Sinatra::Application
     get '/' do
-      Newsreader.channels.first.feeds.first.content.items.first.title
+      binding.pry
+      Newsreader.channels.first.feeds.first.content
     end
   end
 end

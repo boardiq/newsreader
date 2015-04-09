@@ -1,2 +1,4 @@
 require './lib/newsreader'
-run Newsreader::Server
+require "./lib/newsreader/server/anchorman"
+
+run Newsreader::Server::Anchorman

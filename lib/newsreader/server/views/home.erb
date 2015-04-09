@@ -1,0 +1,27 @@
+<div class="row">
+  <% channels.each do |channel| %>
+    <div class="col-md-6">
+      <h2><%= channel.name.to_s.titleize %></h2>
+      <% channel.feeds.each do |feed| %>
+        <div class="panel panel-default">
+          <div class="panel-heading"><%= feed.name.to_s.titleize %></div>
+          <div class="panel-body">
+            <% if feed.content %>
+              <% feed.content.items.group_by {|x| x.pubDate.to_date }.each do |date, group| %>
+                <h3><%= date.strftime("%A %m/%d/%Y") %></h3>
+                <% group.each do |item| %>
+                  <div class="media">
+                    <div class="media-body">
+                      <h4 class="media-heading"><a href="<%= item.link %>"><%= item.title %></a></h4>
+                      <p><%= Sanitize.fragment(item.description) %></p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
