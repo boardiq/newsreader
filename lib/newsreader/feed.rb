@@ -9,7 +9,7 @@ module Newsreader
 
     def content
       @content ||= begin
-        RSS::Parser.parse(feed)
+        RSS::Parser.parse(feed, false)
       rescue
       end
     end
